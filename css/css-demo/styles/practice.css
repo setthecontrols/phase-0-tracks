@@ -4,9 +4,18 @@ section#contact-info {
 
 .job {
   background-color: #E9E5DC;
-  margin-top: 120px
+  border-radius: 10px;
+  margin-top: 120px;
 }
 
 .bullets {
 	font-size: .8em;
+}
+
+ul li {
+  color: red;
+}
+
+#resume-title:hover {
+  background-color: red;
 }
