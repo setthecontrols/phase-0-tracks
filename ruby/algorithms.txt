@@ -1,0 +1,39 @@
+brush teeth:
+  apply toothpaste to toothbrush
+  Until all teeth on right side brushed for at least 20 seconds
+    brush top right outside teeth from molars to premolars for 20 seconds
+    move to bottom right outside teeth
+    brush bottom right outside teeth from molars to premolars for 20 seconds
+    move to bottoms of right molars
+    brush bottoms of right molars from molars to premolars for 20 seconds
+    move to tops of right molars
+    brush tops of right molars from molars to premolars for 20 seconds
+    move to top right inside teeth
+    brush top right inside teeth from molars to premolars for 20 seconds
+    move to bottom right inside teeth
+    brush bottom right inside teeth from molars to premolars for 20 seconds
+  Until all teeth on left side brushed for at least 20 seconds
+    brush top left outside teeth from molars to premolars for 20 seconds
+    move to bottom left outside teeth
+    brush bottom left outside teeth from molars to premolars for 20 seconds
+    move to bottoms of left molars
+    brush bottoms of left molars from molars to premolars for 20 seconds
+    move to tops of left molars
+    brush tops of left molars from molars to premolars for 20 seconds
+    move to top left inside teeth
+    brush top left inside teeth from molars to premolars for 20 seconds
+    move to bottom left inside teeth
+    brush bottom left inside teeth from molars to premolars for 20 seconds
+  Until all teeth in front of mouth brushed for at least 20 seconds
+    brush top front outside teeth from cainine to canine for 20 seconds
+    move to bottom front outside teeth
+    brush bottom front outside teeth from cainine to canine for 20 seconds
+    move to bottoms of front teeth
+    brush bottoms of front teeth from cainine to canine for 20 seconds
+    move to tops of front teeth
+    brush tops of front teeth from cainine to canine for 20 seconds
+    move to top front inside teeth
+    brush top front inside teeth from cainine to canine for 20 seconds
+    move to bottom front inside teeth
+    brush bottom front inside teeth from cainine to canine for 20 seconds  
+  return toothbrush
