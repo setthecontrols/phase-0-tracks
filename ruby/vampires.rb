@@ -14,10 +14,13 @@ insurance = gets.chomp
 
 if (current_year - birth_year == age) && (garlic_bread != "no")
   puts("Probably not a vampire.")
+    elsif (current_year - birth_year != age) && (garlic_bread != "yes") && (insurance != "yes")
+        puts "Almost certainly a vampire."
     elsif (current_year - birth_year != age) && (garlic_bread != "yes" || insurance != "yes")
       puts("Probably a vampire")
-        else
+    else
   	  puts("Results incunclusive")
+end  
 end  	  
 # working on this: 1858
 
