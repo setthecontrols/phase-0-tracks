@@ -24,7 +24,12 @@ end
 encrypt("zed")	
 
 # pseudocode - decrypt
-# take input as string
+
+#define method to take string 
+declare alphabet container - alpha
+declare decrypted string container - decrypted
+set index to 0 - i
+take input as string
 # parse input at each index position
 # decrement character
 # store each decremented character in object 
@@ -36,14 +41,16 @@ def decrypt(string)
 	i = 0
 	a = 0
 	while i < string.length
-		if string[i] = alpha[a] 
-		decrypted = decrypted + (alpha[-a]) 
-		a = a + 1
+		if string[i] != alpha[a]
+		a = a + 1	
+		decrypted = decrypted + (alpha[a - 1]) 
+		i = i + 1
 	    end
-	    i = i + 1
+	    
+	    
 	end
 	decrypted
 end
 
 
-decrypt("zed")	
+decrypt("zed")
