@@ -13,11 +13,15 @@ def encrypt(string)
 	i = 0
 	
 	while i < string.length
-		encrypted = encrypted + string[i].next 
-		i = i + 1
-
+		if string[i] == " "
+		elsif string[i] == "z" 
+		string[i] = "a"
+		else		
+		string[i] = string[i].next! 
 	end
-	encrypted
+	i = i + 1
+	end
+	puts string
 end
 
 
@@ -26,31 +30,33 @@ encrypt("zed")
 # pseudocode - decrypt
 
 #define method to take string 
-declare alphabet container - alpha
-declare decrypted string container - decrypted
-set index to 0 - i
-take input as string
+# declare alphabet container - alpha
+# declare decrypted string container - decrypted
+# set index to 0 - i
+# take input as string
 # parse input at each index position
 # decrement character
 # store each decremented character in object 
 # print decremented character object
 
 def decrypt(string)
-	decrypted = ""
-	alpha = "abcdefghijklmnopqrstuvwxyz"
+	#decrypted = ""
+#	alpha = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+    alphabet = "abcdefghijklmnopqrstuvwxyz"
 	i = 0
 	a = 0
-	while i < string.length
-		if string[i] != alpha[a]
-		a = a + 1	
-		decrypted = decrypted + (alpha[a - 1]) 
-		i = i + 1
+		while i < string.length
+		if string[i] == " "
+		else 
+		temp = alphabet.index(string[i])
+		temp = temp - 1 
+		string[i] = alphabet[temp]
 	    end
-	    
-	    
+	    i = i + 1
 	end
-	decrypted
+	puts string
 end
-
-
 decrypt("zed")
+
+decrypt(encrypt("swordfish"))
+
