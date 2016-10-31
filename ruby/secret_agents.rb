@@ -11,7 +11,8 @@
 def encrypt(string)
 	encrypted = ""
 	i = 0
-	
+	puts"what password would you lie to encrypt?"
+	string = gets.chomp
 	while i < string.length
 		if string[i] == " "
 		elsif string[i] == "z" 
@@ -25,7 +26,7 @@ def encrypt(string)
 end
 
 
-encrypt("zed")	
+#encrypt("zed")	
 
 # pseudocode - decrypt
 
@@ -45,6 +46,8 @@ def decrypt(string)
     alphabet = "abcdefghijklmnopqrstuvwxyz"
 	i = 0
 	a = 0
+	puts"what password would you lie to decrypt?"
+	string = gets.chomp
 		while i < string.length
 		if string[i] == " "
 		else 
@@ -56,7 +59,6 @@ def decrypt(string)
 	end
 	puts string
 end
-decrypt("zed")
 
 decrypt(encrypt("swordfish"))
 
