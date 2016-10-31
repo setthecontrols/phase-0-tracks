@@ -15,6 +15,6 @@ good_candidate = gets.chomp  #not working from 15 - 19
   #end
 est_age = nil
 puts "estimated age"
-est_age = gets.to_f.chomp
+est_age = gets.to_f
 
-puts ("Hamster's name is  #{name}, Noise level rank is #{level}, the color of #{name}'s fur is #{f_color}, #{name}'s #{est_age} years old.  Is #{name} a good candidate for adoption? #{good_candidate}
+puts ("Hamster's name is  #{name}, Noise level rank is #{level}, the color of #{name}'s fur is #{f_color}, #{name}'s #{est_age} years old.  Is #{name} a good candidate for adoption? #{good_candidate}")
