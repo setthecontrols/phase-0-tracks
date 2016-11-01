@@ -1,0 +1,38 @@
+header {
+	background-color: yellow;
+}
+
+section.column-1 {
+	font-family: Gill Sans Extrabold, fantasy;
+	font-weight: bold;
+	background-color: pink;
+	display: inline-block;
+    width: 45%;
+    height: 75%;
+    margin: 10px;
+    border: 3px solid #73AD21; 
+    background-image: url("otter_dragon.jpg");
+    background-repeat: repeat-y;
+}
+
+section.column-2 {
+	font-family: Gill Sans Extrabold, fantasy;
+	font-weight: bold;
+	background-color: gold;
+	display: inline-block;
+    width: 45%;
+    height: px;
+    margin: 10px;
+    border: 3px solid #73AD21; 
+    background-image: url("otter_dragon.jpg");
+    background-repeat: repeat-y;
+}
+
+footer {
+	background-color: blue;
+}
+
+html {
+	background-color: black;
+}
+
