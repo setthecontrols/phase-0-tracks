@@ -40,26 +40,50 @@ ollie.dog_years(4)
 ollie.sleep(3)
 end
 
-# create class
-class Code
-# class write 2 instance methods and an initialize method
-def initialize
+# write new class - babies
+class Babies
+	# write 2 instance methods
+  #potty
+  def potty(int)
+  	if int == 1
+  		puts "Looks like we've got a number 1!"
+  	else int == 2
+  		puts "Uh, oh. It's a stinker!"
+  	end
+ end
+
+  def sleep(bool)
+    if bool == true
+  	  puts "Then I can get some work done."
+    else 
+      puts "Then I'm changing diapers!"
+  	end
+  end
+  def initialize
 	puts "-"*10
-	puts "Initializng new Code instance..."
+	puts "Initializng new Babies instance..."
 	puts "-"*10
 end
 
-def failure
-	puts "What'd I do wrong?"
+end
+#create loop to make 50 instances
+#create structure to store instances in
+instance_arr = []
+50.times do | number |
+  marlo = Babies.new
+  instance_arr << Babies.new
+  p instance_arr
+end
+instance_arr.each do | inst_num |
+  inst_num.potty(1)
+  inst_num.sleep(true)
 end
 
-def success
-	puts "Woo hoo!  It worked!"
-end
-week6 = Code.new
-week6.failure
-week6.success
-# Use a loop to make 50 instances of your class.
-# Modify your loop so that it stores all of the instances in a data structure.
-# Iterate over that data structure using .each and call the instance methods you wrote on each instance. So if you wrote a Gymnast class, this is where you'd call .flip and .jump on each of your instances of Gymnast
-end
+  # marlo.potty(1)
+  # marlo.sleep(true)
+
+
+
+
+#iterate over structure to call methods on instance
+
