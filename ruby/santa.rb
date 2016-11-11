@@ -3,9 +3,19 @@ class Santa
   def speak
     puts "Ho, ho, ho! Haaaappy holidays!"
   end
+  def eat_milk_and_cookies(cookie)
+    puts "That was a good #{cookie}!"
+  end
+  def intialize
+    puts "-"*20
+    puts "Initializing Santa instance..."
+    puts "-"*20
+  end
 end
 
-speak
+hoho = Santa.new
+hoho.speak
+hoho.eat_milk_and_cookies
 
 
 # write new class - babies
