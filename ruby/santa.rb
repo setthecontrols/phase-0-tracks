@@ -7,6 +7,15 @@ class Santa
     @ethnicity = ethnicity
     @reindeer_ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
     @age = age
+    @random_age = rand(140)
+    
+    puts ""
+    puts "-"*20
+    puts "Santa's gender is #{@gender}"
+    puts "Santa's ethnicity is #{@ethnicity} and"
+    puts "Santa is #{@random_age} years old."
+    puts "-"*20
+    puts ""
   end
 
   def speak
@@ -16,7 +25,7 @@ class Santa
   def eat_milk_and_cookies(cookie)
     puts "That was a good #{cookie} cookie!"
   end
-
+ 
   def celebrate_birthday
     @age = 0
     @age = @age + 1 
@@ -30,62 +39,38 @@ class Santa
     puts @reindeer_ranking
   end
   # get_mad_at("Blitzen", "Rudolph")
-  
+end
+ 
 
 
+# santas = []
+# Use our array of example genders and an array of example ethnicities to generate random values for each
+example_genders = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A"]
+example_ethnicities = ["black", "Latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "N/A"]
+# #create santas using user input nubmer. 
+# #get input 
+puts "Tell me how many Santas you require."
+santa_num = gets.chomp.to_i
+# #create loop based on user input
+  santa_num.times do 
+  # puts "working"
+  #initialize instances of santa with random samples from gender and ethnicities and random age (printed from initialize).  
+    Santa.new(example_genders.sample, example_ethnicities.sample)
 end
 
-santa = Santa.new("can't figure it out", "purple")
-santa.speak
-santa.eat_milk_and_cookies("Proposition 64")
-santa.get_mad_at("Blitzen", "Rudolph")
-santa.celebrate_birthday
-puts @reindeer_ranking
 
 
 
 
-# write new class - babies
-# class Babies
-# 	# write 2 instance methods
-#   #potty
-#   def potty(int)
-#   	if int == 1
-#   		puts "Looks like we've got a number 1!"
-#   	else int == 2
-#   		puts "Uh, oh. It's a stinker!"
-#   	end
-#  end
+# santa = Santa.new("can't figure it out", "purple")
+# santa.speak
+# santa.eat_milk_and_cookies("Proposition 64")
+# santa.get_mad_at("Blitzen", "Rudolph")
+# santa.celebrate_birthday
+# puts @reindeer_ranking
 
-#   def sleep(bool)
-#     if bool == true
-#   	  puts "Then I can get some work done."
-#     else 
-#       puts "Then I'm changing diapers!"
-#   	end
-#   end
-#   def initialize
-# 	puts "-"*10
-# 	puts "Initializng new Babies instance..."
-# 	puts "-"*10
-# end
 
-# end
-# #create loop to make 50 instances
-# #create structure to store instances in
-# instance_arr = []
-# 50.times do | number |
-#   marlo = Babies.new
-#   instance_arr << Babies.new
-#   p instance_arr
-# end
-# instance_arr.each do | inst_num |
-#   inst_num.potty(1)
-#   inst_num.sleep(true)
-# end
 
-#   # marlo.potty(1)
-#   # marlo.sleep(true)
  # santas = []
  #  santas << Santa.new("agender", "black")
  #  santas << Santa.new("female", "Latino")
