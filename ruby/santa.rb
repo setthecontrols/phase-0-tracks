@@ -1,41 +1,47 @@
 class Santa
+  attr_reader :gender
+  attr_accessor :age, :ethnicity
+
+  def initialize(gender,ethnicity)
+    @gender = gender
+    @ethnicity = ethnicity
+    @reindeer_ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
+    @age = age
+  end
 
   def speak
     puts "Ho, ho, ho! Haaaappy holidays!"
   end
+
   def eat_milk_and_cookies(cookie)
     puts "That was a good #{cookie} cookie!"
   end
-  def initialize(gender,ethnicity)
-    puts "-"*20
-    puts "Initializing Santa instance..."
-    puts "-"*20
 
-    @gender = gender
-    @ethnicity = ethnicity
-    @reindeer_ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
+  def celebrate_birthday
     @age = 0
-   
-    santas = []
-    santas << Santa.new("agender", "black")
-    santas << Santa.new("female", "Latino")
-    santas << Santa.new("bigender", "white")
-    santas << Santa.new("male", "Japanese")
-    santas << Santa.new("female", "prefer not to say")
-    santas << Santa.new("gender fluid", "Mystical Creature (unicorn)")
-    santas << Santa.new("N/A", "N/A")
+    @age = @age + 1 
+    p "Santa is a whopping #{@age} years old!"
   end
-  # def print_santa
-  #   p @gender
-  #   p @ethnicity
-  #   p @reindeer_ranking
-  #   p @age
-  # end
+
+  def get_mad_at(reindeer_in_last_place,bad_reindeer)
+    # reindeer_ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
+    @reindeer_ranking.insert(@reindeer_ranking.index(reindeer_in_last_place), @reindeer_ranking.delete_at(@reindeer_ranking.index(bad_reindeer)))
+    puts "#{bad_reindeer} was bad and is now at te bottom of the list here:"
+    puts @reindeer_ranking
+  end
+  # get_mad_at("Blitzen", "Rudolph")
+  
+
+
 end
 
-hoho = Santa.new("can't figure it out", "purple")
-hoho.speak
-hoho.eat_milk_and_cookies("Proposition 64")
+santa = Santa.new("can't figure it out", "purple")
+santa.speak
+santa.eat_milk_and_cookies("Proposition 64")
+santa.get_mad_at("Blitzen", "Rudolph")
+santa.celebrate_birthday
+puts @reindeer_ranking
+
 
 
 
@@ -80,3 +86,11 @@ hoho.eat_milk_and_cookies("Proposition 64")
 
 #   # marlo.potty(1)
 #   # marlo.sleep(true)
+ # santas = []
+ #  santas << Santa.new("agender", "black")
+ #  santas << Santa.new("female", "Latino")
+ #  santas << Santa.new("bigender", "white")
+ #  santas << Santa.new("male", "Japanese")
+ #  santas << Santa.new("female", "prefer not to say")
+ #  santas << Santa.new("gender fluid", "Mystical Creature (unicorn)")
+ #  santas << Santa.new("N/A", "N/A")
