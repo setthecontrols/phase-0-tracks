@@ -4,18 +4,39 @@ class Santa
     puts "Ho, ho, ho! Haaaappy holidays!"
   end
   def eat_milk_and_cookies(cookie)
-    puts "That was a good #{cookie}!"
+    puts "That was a good #{cookie} cookie!"
   end
-  def intialize
+  def initialize(gender,ethnicity)
     puts "-"*20
     puts "Initializing Santa instance..."
     puts "-"*20
+
+    @gender = gender
+    @ethnicity = ethnicity
+    @reindeer_ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
+    @age = 0
+   
+    santas = []
+    santas << Santa.new("agender", "black")
+    santas << Santa.new("female", "Latino")
+    santas << Santa.new("bigender", "white")
+    santas << Santa.new("male", "Japanese")
+    santas << Santa.new("female", "prefer not to say")
+    santas << Santa.new("gender fluid", "Mystical Creature (unicorn)")
+    santas << Santa.new("N/A", "N/A")
   end
+  # def print_santa
+  #   p @gender
+  #   p @ethnicity
+  #   p @reindeer_ranking
+  #   p @age
+  # end
 end
 
-hoho = Santa.new
+hoho = Santa.new("can't figure it out", "purple")
 hoho.speak
-hoho.eat_milk_and_cookies
+hoho.eat_milk_and_cookies("Proposition 64")
+
 
 
 # write new class - babies
