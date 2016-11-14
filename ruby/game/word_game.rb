@@ -1,12 +1,18 @@
 class WordGame
+	attr_accessor :guess_word
 
-  def store_guess_word(word_string)
-  	@guess_word = word_string
-  end
+  def initialize
+	@guess_word = []
+	@tries_you_have = ""
+  end	
 
-  def generate_tries(@guess_word)
-  	@tries_you_have = @guess_word.lenth * 1
-  end
+#   def store_guess_word(word_string)
+#   	@guess_word = word_string
+#   end
+
+#   def generate_tries
+#   	@tries_you_have = @guess_word.lenth * 1
+#   end
 end
 
 
@@ -17,7 +23,8 @@ puts "Alright, lets play a game.  First tell me your name."
   # 	#take guess_word from user 1 
 puts "OK, #{player1}, give me a word for another player to guess."
    @guess_word = gets.chomp.chars
-   
+   @tries_you_have = @guess_word.length * 1
+  
   
 #   create method that stores guess_word    
 #     create string to hold guess_word in initialize
@@ -26,7 +33,7 @@ puts "OK, #{player1}, give me a word for another player to guess."
 puts "Thanks #{player1}.  Now we'll have your buddy guess the word"
 puts "Buddy, what's your name?"
   player2 = gets.chomp
-puts "#{player2}, you're going to try and guess the word #{player1} gave us one letter at a time and you'll have #{tries_you_have} tries to do it."
+puts "#{player2}, you're going to try and guess the word #{player1} gave us one letter at a time and you'll have #{@tries_you_have} tries to do it."
 
 puts "THAT'S IT FOR NOW"  
 #     #print as many underscores as there are letters in guess_word and the 
