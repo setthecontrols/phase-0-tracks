@@ -1,21 +1,18 @@
-# Virus Predictor
+#  RELEASES AT BOTTOM.
 
-# I worked on this challenge [by myself, with: ].
-# We spent [#] hours on this challenge.
 
-# EXPLANATION OF require_relative
-#
-#
 require_relative 'state_data'
 
 class VirusPredictor
 
+  # method responsible for setting the state of the variables listed here at the initialization of a new class instance.
   def initialize(state_of_origin, population_density, population)
     @state = state_of_origin
     @population = population
     @population_density = population_density
   end
 
+  # method responsible for initiating 2 methods
   def virus_effects
     predicted_deaths(@population_density, @population, @state)
     speed_of_spread(@population_density, @state)
@@ -23,6 +20,9 @@ class VirusPredictor
 
   private
 
+  # method responsible for taking 3 arguments (although, at the time i write this, it only uses one argument), and assigning a variable the number of deaths a virus will cause in a state
+  # based on population density, as directed by control flow. 
+  # state predictions are printed to user after the code has been executed.
   def predicted_deaths(population_density, population, state)
     # predicted deaths is solely based on population density
     if @population_density >= 200
@@ -40,7 +40,10 @@ class VirusPredictor
     print "#{@state} will lose #{number_of_deaths} people in this outbreak"
 
   end
-
+  
+  # method responsible for taking 2 arguments (although, at the time i write this, it only uses one argument), and assigning a variable the speed at which a virus spreads across a state
+  # based on population density, as directed by control flow. 
+  # state predictions are printed to user after the code has been executed
   def speed_of_spread(population_density, state) #in months
     # We are still perfecting our formula here. The speed is also affected
     # by additional factors we haven't added into this functionality.
@@ -81,3 +84,27 @@ california.virus_effects
 
 alaska = VirusPredictor.new("Alaska", STATE_DATA["Alaska"][:population_density], STATE_DATA["Alaska"][:population])
 alaska.virus_effects
+
+
+# Virus Predictor
+
+# I worked on this challenge [by myself.  I missed my GPS].
+# We spent [#] hours on this challenge. 
+    ##Started at 1330
+
+# Release 0:  EXPLANATION OF WHAT THIS CODE DOES:  this code predects the number of deaths and rate at which the virus spread based on hash data in a required file.  
+    ##it predicts deaths on a sliding scale based on multiples of state population  and the rate at which the virus spreads also on a sliding scale, but based on multiples of population density.  
+    ##after it's performed its predictions, it prints state results for these arguments:  state_of_origin, population_density, population.
+
+# Release 1:  EXPLANATION OF require_relative:  this tells ruby that a file is required to run the code properly, that the file is on the same computer as the rb file itself.  There will be no path to
+    ## the file required if the file is in the exact same directory, but it will have a relative path preceding the file name if it is not in the exact same folder as the rb file, which requires it.
+#
+# Release 2:  Take a look at the state_data.rb file. What is going on with this hash? What does it have in it? 
+    ## The hash contains keys based on states and population density and numbers hash as the values.  
+#(HINT: There are two different syntax used for hashes here. What's the difference?) I refer to this giant hash as a "hashy hash;" why do you think that is? 
+    ##because it's hashes (as values) in a hash.
+#What kind of variable is STATE_DATA, and what's its scope?
+    ##it's a constant, which is meant to remain unchange in the program. 
+
+
+
