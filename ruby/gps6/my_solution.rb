@@ -5,12 +5,16 @@ require_relative 'state_data'
 
 class VirusPredictor
 
+    attr_accessor :STATE_DATA, :instance_for_all_states
+
   # method responsible for setting the state of the variables listed here at the initialization of a new class instance.
   def initialize(state_of_origin, population_density, population)
     @state = state_of_origin
     @population = population
     @population_density = population_density
   end
+ 
+  # private
 
   # method responsible for initiating 2 methods
   def virus_effects
@@ -65,6 +69,7 @@ class VirusPredictor
 
   end
 
+ 
 end
 
 #=======================================================================
@@ -73,17 +78,18 @@ end
  # initialize VirusPredictor for each state
 
 
-alabama = VirusPredictor.new("Alabama", STATE_DATA["Alabama"][:population_density], STATE_DATA["Alabama"][:population])
-alabama.virus_effects
 
-jersey = VirusPredictor.new("New Jersey", STATE_DATA["New Jersey"][:population_density], STATE_DATA["New Jersey"][:population])
-jersey.virus_effects
+# alabama = VirusPredictor.new("Alabama", STATE_DATA["Alabama"][:population_density], STATE_DATA["Alabama"][:population])
+# alabama.virus_effects
 
-california = VirusPredictor.new("California", STATE_DATA["California"][:population_density], STATE_DATA["California"][:population])
-california.virus_effects
+# jersey = VirusPredictor.new("New Jersey", STATE_DATA["New Jersey"][:population_density], STATE_DATA["New Jersey"][:population])
+# jersey.virus_effects
 
-alaska = VirusPredictor.new("Alaska", STATE_DATA["Alaska"][:population_density], STATE_DATA["Alaska"][:population])
-alaska.virus_effects
+# california = VirusPredictor.new("California", STATE_DATA["California"][:population_density], STATE_DATA["California"][:population])
+# california.virus_effects
+
+# alaska = VirusPredictor.new("Alaska", STATE_DATA["Alaska"][:population_density], STATE_DATA["Alaska"][:population])
+# alaska.virus_effects
 
 
 # Virus Predictor
@@ -107,4 +113,13 @@ alaska.virus_effects
     ##it's a constant, which is meant to remain unchange in the program. 
 
 
+# Release 4
+def predict_all_states(states)
+  states.each do | states,population_info |
+  # p "this is working"
+  all_states = VirusPredictor.new(states,population_info[:population_density], population_info[:population])
+  all_states.virus_effects
+  end
+end
+predict_all_states(STATE_DATA)
 
