@@ -17,9 +17,11 @@ p "Stop! You’re under arrest!".upcase
 # => "STOP! YOU’RE UNDER ARREST!"
 
 p "the usual".insert(9, " suspects")
+p "the usual".concat(" suspects")
 #=> "the usual suspects"
 
 p " suspects".insert(0, "the usual")
+p " suspects".prepend("the usual")
 # => "the usual suspects"
 
 p "The case of the disappearing last letter".chop
@@ -29,9 +31,11 @@ p "The mystery of the missing first letter".slice(1..-1)
 # => "he mystery of the missing first letter"
 
 p "Elementary,    my   dear        Watson!".tr_s('  ', ' ')
+p "Elementary,    my   dear        Watson!".squeeze(" ")
 # => "Elementary, my dear Watson!"
 
 p "z".ord
+p "z".codepoints
 # => 122 
 # (What is the significance of the number 122 in relation to the character z?)  It's the ascii number for z.
 
