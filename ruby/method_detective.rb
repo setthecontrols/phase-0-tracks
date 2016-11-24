@@ -22,18 +22,18 @@ p "the usual".insert(9, " suspects")
 p " suspects".insert(0, "the usual")
 # => "the usual suspects"
 
-p "The case of the disappearing last letter".slice!(39)
+p "The case of the disappearing last letter".chop
 # => "The case of the disappearing last lette"
 
-# "The mystery of the missing first letter".<???>
+p "The mystery of the missing first letter".slice(1..-1)
 # => "he mystery of the missing first letter"
 
-# "Elementary,    my   dear        Watson!".<???>
+p "Elementary,    my   dear        Watson!".tr_s('  ', ' ')
 # => "Elementary, my dear Watson!"
 
-# "z".<???>
+p "z".ord
 # => 122 
-# (What is the significance of the number 122 in relation to the character z?)
+# (What is the significance of the number 122 in relation to the character z?)  It's the ascii number for z.
 
-# "How many times does the letter 'a' appear in this string?".<???>
+p "How many times does the letter 'a' appear in this string?".count("a")
 # => 4
