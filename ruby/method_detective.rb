@@ -22,7 +22,7 @@ p "the usual".insert(9, " suspects")
 p " suspects".insert(0, "the usual")
 # => "the usual suspects"
 
-# "The case of the disappearing last letter".<???>
+p "The case of the disappearing last letter".slice!(39)
 # => "The case of the disappearing last lette"
 
 # "The mystery of the missing first letter".<???>
