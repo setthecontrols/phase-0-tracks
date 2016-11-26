@@ -27,3 +27,4 @@ drummers_drums_used.each do |drummer, drums|
   end
 end
 drummers_drums_used
+ 
