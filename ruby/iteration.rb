@@ -1,137 +1,115 @@
-
-
-#Release 2
-
-#Number 1.
-
-#Deleting from an array
-
-	numbers = [1, 2, 3, 4, 5, 6, 7, 8]
-
-	p numbers
-
-	numbers.delete_if { |num| num%2 == 0}
-	p numbers
-
-
-#Delete from a hash
-
- 
-	numbers = {"one" => 1, "two" => 2, "three" => 3, "four" => 4, "five" => 5, "six" => 6, "seven" => 7, "eight" => 8}
-		numbers.delete_if {|key, value| value%2 == 0}
-
-	p numbers
-
-#Number 2
-
-#Filter from an array
-
-	numbers = [1, 2, 3, 4, 5, 6, 7, 8]
-
-	p numbers.reject { |num| num%2 == 0}
-	p numbers
-
-
-#Filter from a hash
-
- 
-	numbers = {"one" => 1, "two" => 2, "three" => 3, "four" => 4, "five" => 5, "six" => 6, "seven" => 7, "eight" => 8}
-		p numbers.reject {|key, value| value%2 == 0}
-		p numbers
-
-# - End Filters -
-
-#Number 3
-#Different array filter
-
-	numbers = [1, 2, 3, 4, 5, 6, 7, 8]
-
-	p numbers.select { |num| num%2 == 0}
-	p numbers
-
-
-#Different hash filter
-
- 
-	numbers = {"one" => 1, "two" => 2, "three" => 3, "four" => 4, "five" => 5, "six" => 6, "seven" => 7, "eight" => 8}
-		p numbers.select {|key, value| value%2 == 0}
-		p numbers
-
-#End different method
-
-number = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-	loop do
-		new_number = number.delete_if {|delete| delete - delete = 0}
-		p new_number.any?
-	if new_number.any? == false
-		p new_number
-	break
-end
+## Try The Thing
+def dogs
+	puts "Nice dog, there."
+	yield("Shishi", 4)
 end
 
-#Number 4
- 10 = false
+# dogs {|name,age| puts "Why thank you.  His name is #{name} and is #{age} years old."}
 
-loop do
-	number = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-	rejected_numbers = numbers.reject { |num| num + 3}
-	break if rejected_numbers == false
-end
+## Do the thing #1
 
-#Release 1 demonstrating knowledge - hashed out to keep code from running -
-
-# start .each
-
-dinner = {
-	pizza: ["pepperoni", "cheese", "bacon"],
-	burger: ["bacon", "avocado", "classic"],
-	burrito: ["chicken", "bean", "pork"],
+drummers_drums_used = {
+	"Buddy Rich" => ["Ludwig"],
+	"Keith Moon" => ["Premier"],
+	"Mitch Mitchell" => ["Ludwig"],
+	"John Bonham" => ["Ludwig"],
+	"Louie Bellson" => ["Rogers"]
 }
 
+drummers_drums_used.each do |drummer, drums |
+  puts "#{drummer} played #{drums} drums."
+end
+  puts "But Louie also played Slingerland, so let's add that now:"
+drummers_drums_used.each do |drummer, drums|
+  if drummer == "Louie Bellson"
+    drummers_drums_used["Louie Bellson"][1] = "Slingerland"
+  end
+end
+p drummers_drums_used
 
 
-puts "Whats for Dinner!"
-p dinner 
-dinner.each do |dish, ingredient|
-         
+drummers = ["Buddy Rich", "Keith Moon", "Mitch Mitchell", "John Bonham", "Louie Bellson"]
 
+drummers.each do | drummer |
+ 
+  puts "#{drummer} is one of the best drummers of all time!"
+  
+end
 
-puts "You will eat a #{dish} with #{ingredient[]}"
+no_moon = []
+puts "I don't like Keith Moons' drumming, so I don't even want to see the letters of his name in these other greats' names...."
+drummers.map! do | drummer |
+    drummer.delete("Keith Moon")
+end
+p drummers
+
+puts "Much better"
+drummers.each do |new_name|
+puts "Here are the new names: #{new_name}"
 
 end
 
-# end .each
+## Do The Thing #2 for arrays
 
-# start .map
+#1
+h = ["a","b","c","d"]
 
-dinner = ["pizza", "burger", "burrito"]
+p h.delete_if { | letter | letter > "c" }
 
+#2
+h = ["a","b","c","d"]
 
+letters_c_and_up = h.select {|letter| letter > "b" } 
 
-puts "Whats for Dinner!"
-p dinner 
-dinner.map do |dish|
-         
+p letters_c_and_up
+
+#3
+h = ["a","b","c","d"]
+h.reject! {| letter | letter != "c" }
+
+#4
+h = ["a","b","c","d"]
+
+h2 = h.drop_while {| letter| letter <= "b"}
+p h2 
+
+## Do The Thing #2 for hases
+#1
+hash = {
+  "a" => 1,
+  "b" => 2,
+  "c" => 3,
+  "d" => 4
+}
+
+hash.delete_if {| alpha, num | alpha > "c"}
+p hash 
+
+#2
+hash = {
+  "a" => 1,
+  "b" => 2,
+  "c" => 3,
+  "d" => 4
+}
+
+hash.select! {| alpha, num | num <= 3}
+hash
+
+#3
+hash = {
+  "a" => 1,
+  "b" => 2,
+  "c" => 3,
+  "d" => 4
+}
+
+hash.keep_if {| alpha, num | num == 3}
+
+#4
+hash.each_key do | alpha, num |
+  if alpha < "c"
+    hash.delete(alpha)
+  end
 end
-
-#end .map
-
-#start .map!
-
-dinner = ["pizza", "burger", "burrito"]
-
-puts "original array"
-p dinner
-
-puts "Want to see something crazy?"
-
-something_crazy = dinner.map! do |dish|
- 	puts dish
- 	dish.next
-
-end
-
-puts "here you go"
-puts something_crazy
-
 
