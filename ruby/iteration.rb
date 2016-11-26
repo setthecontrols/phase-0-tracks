@@ -1,8 +1,8 @@
 ## Try The Thing
-# def dogs
-# 	puts "Nice dog, there."
-# 	yield("Shishi", 4)
-# end
+def dogs
+	puts "Nice dog, there."
+	yield("Shishi", 4)
+end
 
 # dogs {|name,age| puts "Why thank you.  His name is #{name} and is #{age} years old."}
 
@@ -107,11 +107,9 @@ hash = {
 hash.keep_if {| alpha, num | num == 3}
 
 #4
-hash = {
-  "a" => 1,
-  "b" => 2,
-  "c" => 3,
-  "d" => 4
-}
-
+hash.each_key do | alpha, num |
+  if alpha < "c"
+    hash.delete(alpha)
+  end
+end
 
