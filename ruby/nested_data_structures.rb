@@ -48,23 +48,19 @@ ROCK_SHOW = {
         },    
     },
     impending_lineups: {
-      20161129: ["Pins Of Light", "Suepernaut","Joy"]
-      }
+      20161129 => ["Pins Of Light", "Suepernaut","Joy"]
+      },
     old_lineups: {
 
     }
 }
 
-def archive_lineup
-  ROCK_SHOW[:impending_lineups].each {|date, lineup| p date, lineup}
 
-def update_lineup
+p ROCK_SHOW[:venue][:floor][:ammeneties][2]
+  ROCK_SHOW[:impending_lineups][20161130] = ["Owl", "Hazzard's Cure", "Set The Controls"]
+p ROCK_SHOW[:impending_lineups][20161130][2]
+p "The club has all you need and the some: #{ROCK_SHOW[:venue][:floor][:ammeneties][0..-1]}"
 
-  ROCK_SHOW[:impending_lineups].each do
-
-  end
-end
-# update_bands
 
 def reset_seat_status
   ROCK_SHOW[:venue][:balcony][:seating][:seats].each do
@@ -73,5 +69,10 @@ def reset_seat_status
   end
   p ROCK_SHOW
 end
-
 # reset_seat_status
+
+
+
+
+
+
