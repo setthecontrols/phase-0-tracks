@@ -47,18 +47,24 @@ ROCK_SHOW = {
             ]            
         },    
     },
-    bands: [
-        "Pins Of Light",
-        "Suepernaut",
-        "Joy"
-    ]
+    impending_lineups: {
+      20161129: ["Pins Of Light", "Suepernaut","Joy"]
+      }
+    old_lineups: {
+
+    }
 }
 
+def archive_lineup
+  ROCK_SHOW[:impending_lineups].each {|date, lineup| p date, lineup}
 
-def update_bands
- p ROCK_SHOW[:bands]
+def update_lineup
+
+  ROCK_SHOW[:impending_lineups].each do
+
+  end
 end
-update_bands
+# update_bands
 
 def reset_seat_status
   ROCK_SHOW[:venue][:balcony][:seating][:seats].each do
