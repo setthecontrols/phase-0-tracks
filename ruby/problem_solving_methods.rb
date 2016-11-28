@@ -1,18 +1,18 @@
 # Release 0 - this returns nil in repl, but not the command line.  Which one should I trust?
 # def search_array(arr, num)
-# i =0 
-# while i < arr.length
-#   if num == arr[i]
-#     p i
-#   else
-#     break
-#   end
-#   i += 1
-# end
+i =0 
+while i < arr.length
+  if num == arr[i]
+    p i
+  else
+    break
+  end
+  i += 1
+end
 
-# end
-# arr = [42, 89, 23, 1]
-# search_array(arr,4)
+end
+arr = [42, 89, 23, 1]
+search_array(arr,4)
 
 # Add a method to your file that takes a number of Fibonacci terms to generate and returns an array of the terms. 
 # For example, fib(6) would return [0,1,1,2,3,5]. Your method should work for a large number of terms. To verify your work: 
@@ -32,4 +32,17 @@ i += 1
 end
 p FIB_ARR
 end 
-fib(100)
+p fib(100).include?(218922995834555169026)
+
+
+# arr = [21,89,22,99,58,45,55,16,90,26]
+ ## I just couldn't figure this one out.  i'm going to get this sorted out during office hours tomorrow.  
+# idx1 = 0
+# idx2 = 1 
+# while idx2 < arr.length
+#   if arr[idx2] > arr[idx1]
+#     idx2 += 1
+#     p "working"
+
+#   end
+# end
