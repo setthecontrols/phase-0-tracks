@@ -6,11 +6,16 @@ class Puppy
   end
 
   def speak(int)
-    puts "Woof!"*int
+    puts "Woof! "*int
+  end
+
+  def roll_over
+    puts "*rolls over*"
   end
 
 end
 
 puppy = Puppy.new
 puppy.fetch("stuffed animal")
-puppy.speak
+puppy.speak(8)
+puppy.roll_over
