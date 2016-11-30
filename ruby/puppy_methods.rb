@@ -1,6 +1,6 @@
 class DirtRiding
 
-  def method_name
+  def initialize
     puts "**********Initializing Dirt Riding Method**********"
   end
 
