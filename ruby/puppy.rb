@@ -1,18 +1,17 @@
-## puppy class
+SPECIES----------------------
+Puppy
 
-SPECIES-----------------
-Puppis Rascaleus
+CHARACTERISTICS--------------
+cute = true
+playfulness_scale = 10
+energy_level = 11 
+color = color
+breed = breed
+name = name
 
-CHARACTERISTICS---------
-Color: 
-Temprament:
-Size:
-Level of activity:
-Appetite:
-
-BEHAVIOR----------------
-Play:
-Eat:
-Potty:
-Destroy:
-Learn:
+BEHAVIOR---------------------
+eat
+sleep
+play
+potty
+destroy
