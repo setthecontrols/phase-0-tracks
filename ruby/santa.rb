@@ -1,5 +1,9 @@
 class Santa
 
+  def initialize
+    puts "----------------Initializing Santa Instance----------------"
+  end
+
 def speak
   puts "Ho, ho, ho!  Haaaaapy holidays!"
 end
