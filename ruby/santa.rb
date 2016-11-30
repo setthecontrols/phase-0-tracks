@@ -13,3 +13,7 @@ def eat_milk_and_cookies(type_of_cookie)
 end
 
 end
+
+santa = Santa.new
+santa.speak
+santa.eat_milk_and_cookies("Chalkolate Chip")
