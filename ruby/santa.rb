@@ -1,81 +1,77 @@
+#Release 0
 class Santa
-  attr_reader :gender
-  attr_accessor :age, :ethnicity
 
-  def initialize(gender,ethnicity)
+  attr_accessor :gender
+  attr_reader :ethnicity, :age
+
+#Release 1
+  def initialize(gender, ethnicity)
     @gender = gender
     @ethnicity = ethnicity
     @reindeer_ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
-    @age = age
-    @random_age = rand(140)
-    
-    puts ""
-    puts "-"*20
-    puts "Santa's gender is #{@gender}"
-    puts "Santa's ethnicity is #{@ethnicity} and"
-    puts "Santa is #{@random_age} years old."
-    puts "-"*20
-    puts ""
+    @age = 1+rand(140)
+    puts "----------------Initializing Santa Instance----------------"
   end
+
+#Release 0, do the thing
 
   def speak
-    puts "Ho, ho, ho! Haaaappy holidays!"
+    puts "Ho, ho, ho!  Haaaaapy holidays!"
   end
 
-  def eat_milk_and_cookies(cookie)
-    puts "That was a good #{cookie} cookie!"
+  def eat_milk_and_cookies(type_of_cookie)
+    puts "That was a good #{type_of_cookie} cookie!"
   end
- 
+
+#Release 2, Do the thing
+
   def celebrate_birthday
-    @age = 0
-    @age = @age + 1 
-    p "Santa is a whopping #{@age} years old!"
+    @age += 1
   end
 
-  def get_mad_at(reindeer_in_last_place,bad_reindeer)
-    # reindeer_ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
-    @reindeer_ranking.insert(@reindeer_ranking.index(reindeer_in_last_place), @reindeer_ranking.delete_at(@reindeer_ranking.index(bad_reindeer)))
-    puts "#{bad_reindeer} was bad and is now at te bottom of the list here:"
+  def get_mad_at(reindeer_name)
+    @reindeer_ranking.delete(reindeer_name)
+    @reindeer_ranking << reindeer_name
     puts @reindeer_ranking
   end
-  # get_mad_at("Blitzen", "Rudolph")
+
+  # def gender=(new_gender)
+  #   @gender = new_gender
+  # end
+
+  # def gender
+  #   gender = @gender    
+  # end
+
+  # def age
+  #   age = @age  
+  # end
+
+  # def ethnicity
+  #   ethnicity = @ethnicity
+  # end
 end
- 
 
+puts santa = Santa.new("neutral", "rainbow")
+puts santa.get_mad_at("Rudolph")
+puts santa.gender = "awesome"
+puts santa.gender
+puts santa.age
+puts santa.ethnicity 
+# santa.speak
+# santa.eat_milk_and_cookies("Chalkolate Chip")
 
-# santas = []
-# Use our array of example genders and an array of example ethnicities to generate random values for each
+#Release 1, Do the thing AND Release 4, Do the thing
+
 example_genders = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A"]
 example_ethnicities = ["black", "Latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "N/A"]
-# #create santas using user input nubmer. 
-# #get input 
-puts "Tell me how many Santas you require."
-santa_num = gets.chomp.to_i
-# #create loop based on user input
-  santa_num.times do 
-  # puts "working"
-  #initialize instances of santa with random samples from gender and ethnicities and random age (printed from initialize).  
-    Santa.new(example_genders.sample, example_ethnicities.sample)
+random_santa = []
+
+10.times do | i |
+random_santa <<  santa =Santa.new(example_genders.sample, example_ethnicities.sample)
+puts "Santa's gender: #{santa.gender}"
+puts "Santa's ethnicity: #{santa.ethnicity}"
+puts "Santa is #{santa.age}"
+
 end
 
-
-
-
-
-# santa = Santa.new("can't figure it out", "purple")
-# santa.speak
-# santa.eat_milk_and_cookies("Proposition 64")
-# santa.get_mad_at("Blitzen", "Rudolph")
-# santa.celebrate_birthday
-# puts @reindeer_ranking
-
-
-
- # santas = []
- #  santas << Santa.new("agender", "black")
- #  santas << Santa.new("female", "Latino")
- #  santas << Santa.new("bigender", "white")
- #  santas << Santa.new("male", "Japanese")
- #  santas << Santa.new("female", "prefer not to say")
- #  santas << Santa.new("gender fluid", "Mystical Creature (unicorn)")
- #  santas << Santa.new("N/A", "N/A")
