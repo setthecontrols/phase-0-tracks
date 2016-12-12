@@ -1,14 +1,16 @@
-
-function add(x, y) {
-  return x + y;
-}
-
+// take string input
+// declar container string to store one letter of string at a time
+// write iteration that adds one letter of string at a time
+//   front of container string until end of string  
+var reversed = ""
 function reverse(string){
-// var string = "hello"
-var reversed = "";
-for (var i = 0; i < string.length; i++) {
- reversed=(string[i])+reversed;
+  for (var i = 0; i < string.length; i++){
+    reversed = string[i] + reversed;
+  }
+if (string == "hello world!") {
+	console.log(reversed);
+}else {
+	console.log("You didn't say the magic phraaaaaaase.");
 }
-console.log(reversed);
 }
-reverse("freefall");
+reverse("hello world!")
