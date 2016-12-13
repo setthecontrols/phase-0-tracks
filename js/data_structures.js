@@ -1,29 +1,26 @@
-colors = ["blue", "red", "rainbow", "orange", "pink"];
-names = ["Ed", "Bill", "Bob", "Chuck", 'floyd'];
+var colors = ["orange", "white", "pink", "black"]
+var names = ["goblin", "stripes", "floyd", "sabbath"]
 
-horses = {}
 
-function add_stuff(object,k,v) {
-	for (var i = 0; i < names.length; i++) {
-		keys = k[i]
-		values = v[i]
-		object[keys] = values
+function add_name(arr, color){
+	arr.push(color);
+console.log(arr);
+}
+add_name(colors, "blues");
+
+
+function add_name(arr, name){
+	arr.push(name);
+console.log(arr);
+}
+add_name(names, "pills");
+
+var horses = {}
+function add_names_and_colors(color, name){
+
+	for (var i = 0; i < colors.length; i++){
+		horses[color[i]] = name[i];
 	}
-	console.log(object);
+	console.log(horses);
 }
-
-// add_stuff(horses,names,colors)
-
-function Cars(year,model,isNew) {
-	console.log("Our new car:", this);
-	this.year = year;
-	this.model = model;
-	this.isNew = isNew;
-	this.carHonk = function () {console.log("Beep Beep!"); };
-	console.log("CAR INITIALIZATION COMPLETE");
-}
-
-var tesla = new Cars(2014,"S",true);
-console.log(tesla);
-
-tesla.carHonk();
+add_names_and_colors(colors, names)
