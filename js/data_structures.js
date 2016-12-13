@@ -35,7 +35,7 @@ function Car(fuleType, year, isWorking){
 
 	this.reverse = function() {console.log("Backing up, over here!");};
 
-	console.log("CAR INITIALIZED")
+	console.log("CAR INITIALIZED") 
 }
 
 console.log("Let's put a car together!")
