@@ -1,0 +1,108 @@
+CREATE TABLE musicians (id INTEGER PRIMARY KEY, name VARCHAR(255), years_with_band INT, instrument_played VARCHAR(255), alive INT, band_id INT, long_ass_time_in_band INT, FOREIGN KEY (band_id) REFERENCES bands(id));
+CREATE TABLE bands (id INTEGER PRIMARY KEY, band_name VARCHAR(255));
+
+
+Release 2
+1  Display the information in one table (either table is fine).
+	sqlite> SELECT * FROM musicians
+	   ...> ;
+	1|David Crosby|48|guitar|1|1
+	2|Steven Stills|48|guitar|1|1
+	3|Graham Nash|48|guitar|1|1
+	4|Hubert Summlin|13|guitar|0|2
+	5|Chester Arthur Burnett, aka Howlin' Wolf|28|singer|0|2
+	6|John Thomas Osbourne, aka Ozzy|47|singer|1|3
+	7|Tony Iommi|47|guitar|1|3
+	8|Geezer Butler|47|bass|1|3
+	9|Bill Ward|47|drums|1|3
+	10|Mitch Mitchell|3|drums|0|4
+	11|James Marshell, aka Jimi|3|guitar|0|4
+	12|Noel Redding|3|bass|0|4
+	13|Paul McCartney|10|bass|1|5
+	14|Richard Starkey, aka Ringo Starr|8|drums|1|5
+	15|John Lennon|10|guitar|0|5
+	16|George Harrison|10|guitar|0|5
+
+2  Update an item that meets some condition (you can choose a condition that makes sense).
+	sqlite> ALTER TABLE musicians ADD COLUMN long_ass_time_in_band INT;
+    sqlite>  UPDATE musicians SET long_ass_time_in_band = 1 WHERE years_with_band >= 10;
+    sqlite> UPDATE musicians SET long_ass_time_in_band = 0 WHERE years_with_band < 10;
+
+	sqlite> SELECT musicians.name,musicians.years_with_band, musicians.long_ass_time_in_band FROM musicians;
+	David Crosby|48|1
+	Steven Stills|48|1
+	Graham Nash|48|1
+	Hubert Summlin|13|1
+	Chester Arthur Burnett, aka Howlin' Wolf|28|1
+	John Thomas Osbourne, aka Ozzy|47|1
+	Tony Iommi|47|1
+	Geezer Butler|47|1
+	Bill Ward|47|1
+	Mitch Mitchell|3|0
+	James Marshell, aka Jimi|3|0
+	Noel Redding|3|0
+	Paul McCartney|10|1
+	Richard Starkey, aka Ringo Starr|8|0
+	John Lennon|10|1
+	George Harrison|10|1
+
+3  Display the information in both tables using one query.
+	sqlite> SELECT * FROM musicians, bands WHERE musicians.band_id = bands.id;
+	1|David Crosby|48|guitar|1|1|1|1|Crosby, Stills, Nash & Young
+	2|Steven Stills|48|guitar|1|1|1|1|Crosby, Stills, Nash & Young
+	3|Graham Nash|48|guitar|1|1|1|1|Crosby, Stills, Nash & Young
+	4|Hubert Summlin|13|guitar|0|2|1|2|Howlin' Wolf
+	5|Chester Arthur Burnett, aka Howlin' Wolf|28|singer|0|2|1|2|Howlin' Wolf
+	6|John Thomas Osbourne, aka Ozzy|47|singer|1|3|1|3|Black Sabbath
+	7|Tony Iommi|47|guitar|1|3|1|3|Black Sabbath
+	8|Geezer Butler|47|bass|1|3|1|3|Black Sabbath
+	9|Bill Ward|47|drums|1|3|1|3|Black Sabbath
+	10|Mitch Mitchell|3|drums|0|4|0|4|The Jimi Hendrix Experience
+	11|James Marshell, aka Jimi|3|guitar|0|4|0|4|The Jimi Hendrix Experience
+	12|Noel Redding|3|bass|0|4|0|4|The Jimi Hendrix Experience
+	13|Paul McCartney|10|bass|1|5|1|5|The Beatles
+	14|Richard Starkey, aka Ringo Starr|8|drums|1|5|0|5|The Beatles
+	15|John Lennon|10|guitar|0|5|1|5|The Beatles
+	16|George Harrison|10|guitar|0|5|1|5|The Beatles
+
+4  Display a narrower selection of columns (fewer columns than all of them, in other words) from both tables using one query.
+
+	SELECT musicians.name, bands.band_name FROM musicians JOIN bands ON musicians.band_id = bands.id;
+	David Crosby|Crosby, Stills, Nash & Young
+	Steven Stills|Crosby, Stills, Nash & Young
+	Graham Nash|Crosby, Stills, Nash & Young
+	Hubert Summlin|Howlin' Wolf
+	Chester Arthur Burnett, aka Howlin' Wolf|Howlin' Wolf
+	John Thomas Osbourne, aka Ozzy|Black Sabbath
+	Tony Iommi|Black Sabbath
+	Geezer Butler|Black Sabbath
+	Bill Ward|Black Sabbath
+	Mitch Mitchell|The Jimi Hendrix Experience
+	James Marshell, aka Jimi|The Jimi Hendrix Experience
+	Noel Redding|The Jimi Hendrix Experience
+	Paul McCartney|The Beatles
+	Richard Starkey, aka Ringo Starr|The Beatles
+	John Lennon|The Beatles
+	George Harrison|The Beatles
+
+
+5  Delete an item that meets some condition (you can choose a condition that makes sense).
+
+	sqlite> DELETE from musicians  WHERE band_id = 2;
+	sqlite> SELECT * FROM musicians;
+
+	1|David Crosby|48|guitar|1|1|1
+	2|Steven Stills|48|guitar|1|1|1
+	3|Graham Nash|48|guitar|1|1|1
+	6|John Thomas Osbourne, aka Ozzy|47|singer|1|3|1
+	7|Tony Iommi|47|guitar|1|3|1
+	8|Geezer Butler|47|bass|1|3|1
+	9|Bill Ward|47|drums|1|3|1
+	10|Mitch Mitchell|3|drums|0|4|0
+	11|James Marshell, aka Jimi|3|guitar|0|4|0
+	12|Noel Redding|3|bass|0|4|0
+	13|Paul McCartney|10|bass|1|5|1
+	14|Richard Starkey, aka Ringo Starr|8|drums|1|5|0
+	15|John Lennon|10|guitar|0|5|1
+	16|George Harrison|10|guitar|0|5|1
+
