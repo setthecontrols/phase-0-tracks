@@ -106,3 +106,99 @@ Release 2
 	15|John Lennon|10|guitar|0|5|1
 	16|George Harrison|10|guitar|0|5|1
 
+Release 3
+
+2  Try a few different joins in your database, and record the commands and the output in queries.txt
+
+sqlite> SELECT name, years_with_band FROM musicians CROSS JOIN bands
+   ...> ;
+David Crosby|48
+David Crosby|48
+David Crosby|48
+David Crosby|48
+David Crosby|48
+Steven Stills|48
+Steven Stills|48
+Steven Stills|48
+Steven Stills|48
+Steven Stills|48
+Graham Nash|48
+Graham Nash|48
+Graham Nash|48
+Graham Nash|48
+Graham Nash|48
+John Thomas Osbourne, aka Ozzy|47
+John Thomas Osbourne, aka Ozzy|47
+John Thomas Osbourne, aka Ozzy|47
+John Thomas Osbourne, aka Ozzy|47
+John Thomas Osbourne, aka Ozzy|47
+Tony Iommi|47
+Tony Iommi|47
+Tony Iommi|47
+Tony Iommi|47
+Tony Iommi|47
+Geezer Butler|47
+Geezer Butler|47
+Geezer Butler|47
+Geezer Butler|47
+Geezer Butler|47
+Bill Ward|47
+Bill Ward|47
+Bill Ward|47
+Bill Ward|47
+Bill Ward|47
+Mitch Mitchell|3
+Mitch Mitchell|3
+Mitch Mitchell|3
+Mitch Mitchell|3
+Mitch Mitchell|3
+James Marshell, aka Jimi|3
+James Marshell, aka Jimi|3
+James Marshell, aka Jimi|3
+James Marshell, aka Jimi|3
+James Marshell, aka Jimi|3
+Noel Redding|3
+Noel Redding|3
+Noel Redding|3
+Noel Redding|3
+Noel Redding|3
+Paul McCartney|10
+Paul McCartney|10
+Paul McCartney|10
+Paul McCartney|10
+Paul McCartney|10
+Richard Starkey, aka Ringo Starr|8
+Richard Starkey, aka Ringo Starr|8
+Richard Starkey, aka Ringo Starr|8
+Richard Starkey, aka Ringo Starr|8
+Richard Starkey, aka Ringo Starr|8
+John Lennon|10
+John Lennon|10
+John Lennon|10
+John Lennon|10
+John Lennon|10
+George Harrison|10
+George Harrison|10
+George Harrison|10
+George Harrison|10
+George Harrison|10
+
+
+
+
+sqlite> SELECT name, years_with_band FROM musicians INNER JOIN bands WHERE musicians.name LIKE "%aka%";
+John Thomas Osbourne, aka Ozzy|47
+John Thomas Osbourne, aka Ozzy|47
+John Thomas Osbourne, aka Ozzy|47
+John Thomas Osbourne, aka Ozzy|47
+John Thomas Osbourne, aka Ozzy|47
+James Marshell, aka Jimi|3
+James Marshell, aka Jimi|3
+James Marshell, aka Jimi|3
+James Marshell, aka Jimi|3
+James Marshell, aka Jimi|3
+Richard Starkey, aka Ringo Starr|8
+Richard Starkey, aka Ringo Starr|8
+Richard Starkey, aka Ringo Starr|8
+Richard Starkey, aka Ringo Starr|8
+Richard Starkey, aka Ringo Starr|8
