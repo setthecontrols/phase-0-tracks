@@ -1,0 +1,21 @@
+
+
+sqlite> select reviews.*, businesses.*, users.* from reviews join businesses on reviews.business_id = businesses.id join users on reviews.user_id = users.id;
+1|4|OMG.  the plastic was so plasticy!|3|3|3|Billy's Fantastic Plastic|3|the_thort|Billy|Bob
+2|0|Seriously?  like, the plastic was so rubbery and the guy behind the counter was so rude when i told him he smelled anglo.  WHAT EVER!l|3|1|3|Billy's Fantastic Plastic|1|bentobox|Ben|Tobox
+3|2|Meh.  pretty plasticky, but nothing to write home about.|3|2|3|Billy's Fantastic Plastic|2|gpelo|Gary|Harry
+sqlite> 
+
+
+sqlite> select first_name, last_name, name, stars, comment from reviews join businesses on reviews.business_id = businesses.id join users on reviews.user_id = users.id;
+Billy|Bob|Billy's Fantastic Plastic|4|OMG.  the plastic was so plasticy!
+Ben|Tobox|Billy's Fantastic Plastic|0|Seriously?  like, the plastic was so rubbery and the guy behind the counter was so rude when i told him he smelled anglo.  WHAT EVER!l
+Gary|Harry|Billy's Fantastic Plastic|2|Meh.  pretty plasticky, but nothing to write home about.
+sqlite> 
+
+sqlite> select reviews.*, businesses.*, users.* from reviews join businesses on reviews.business_id = businesses.id join users on reviews.user_id = users.id where businesses.id = 3;
+id|stars|comment|business_id|user_id|id|name|id|user_id|first_name|last_name
+1|4|OMG.  the plastic was so plasticy!|3|3|3|Billy's Fantastic Plastic|3|the_thort|Billy|Bob
+2|0|Seriously?  like, the plastic was so rubbery and the guy behind the counter was so rude when i told him he smelled anglo.  WHAT EVER!l|3|1|3|Billy's Fantastic Plastic|1|bentobox|Ben|Tobox
+3|2|Meh.  pretty plasticky, but nothing to write home about.|3|2|3|Billy's Fantastic Plastic|2|gpelo|Gary|Harry
+sqlite> 
